@@ -1,0 +1,75 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: #000; /* Ensure background is black */
+  overflow: hidden;
+}
+
+.app-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Main card wrapping the video and chat elements */
+.main-card {
+  width: 90%;
+  max-width: 800px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative; /* Important for positioning elements inside */
+  z-index: 1; /* Keep the card above the background */
+}
+
+/* Video container occupies the top part of the card */
+.card-video-container {
+  position: relative;
+  height: 50vh; /* Fixed vertical size for the video area */
+  background-color: #000;
+  overflow: hidden;
+  z-index: 1; /* Ensure the video stays within the card */
+}
+
+/* Video wrapper maintains fixed 16:9 dimensions */
+.video-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50vh;
+  width: calc(50vh * 16 / 9);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.video-fade-in {
+  opacity: 1;
+}
+
+/* Container for the text input and chat button */
+.card-chat-button-container {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between; /* Align input and button */
+  align-items: center;
+  background-color: #000;
+  gap: 1rem;
+  width: 100%;
+  z-index: 2; /* Ensure chat UI elements are above the video */
+}
+
+/* Limit the width of the chat input */
+.chat-input {
+  flex: 1;
+  max-width: 70%;
+}
+
+/* Style overrides for the chat button */
+.chat-button {
+  background-color: #3778e7;
+  color: #fff;
+}
