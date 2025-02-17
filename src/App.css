@@ -1,7 +1,7 @@
 html, body, #root {
   height: 100%;
   margin: 0;
-  background-color: #000; /* Ensure background is black */
+  background-color: #000; /* Global background is black */
   overflow: hidden;
 }
 
@@ -14,6 +14,16 @@ html, body, #root {
   width: 100%;
 }
 
+/* Matrix Background: canvas */
+.matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Put the matrix background behind the content */
+}
+
 /* Main card wrapping the video and chat elements */
 .main-card {
   width: 90%;
@@ -22,8 +32,8 @@ html, body, #root {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  position: relative; /* Important for positioning elements inside */
-  z-index: 1; /* Keep the card above the background */
+  position: relative; /* Important for positioning the card above the background */
+  z-index: 1; /* Ensure the card appears above the background */
 }
 
 /* Video container occupies the top part of the card */
@@ -32,7 +42,6 @@ html, body, #root {
   height: 50vh; /* Fixed vertical size for the video area */
   background-color: #000;
   overflow: hidden;
-  z-index: 1; /* Ensure the video stays within the card */
 }
 
 /* Video wrapper maintains fixed 16:9 dimensions */
